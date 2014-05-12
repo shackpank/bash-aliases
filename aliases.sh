@@ -3,6 +3,9 @@ alias gx="gitx"
 alias gst="git status"
 alias json="python -mjson.tool"
 
+# "check out latest master"
+alias colm="git checkout master && git pull && git status"
+
 # merge master (in its most up to date status on origin)
 # into the current branch
 alias gmm="git fetch && git merge origin/master"
