@@ -22,3 +22,6 @@ function gco() {
 function ggb() {
     git grep -n $1 | while IFS=: read i j k; do git blame -L $j,$j $i | cat; done
 }
+
+# list branches sorted by date, what did I change recently?
+alias glrb='for k in `git branch | sed s/^..//`; do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k --`\\t"$k";done | sort'
