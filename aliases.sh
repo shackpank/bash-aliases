@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # less typing
 alias gx="gitx"
 alias gst="git status"
@@ -25,3 +27,7 @@ function ggb() {
 
 # list branches sorted by date, what did I change recently?
 alias glrb='for k in `git branch | sed s/^..//`; do echo -e `git log -1 --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k --`\\t"$k";done | sort'
+
+function hapitoken() {
+	cat ~/Code/tripapplite/config/config.yml | grep server_token | awk '{print $2}'
+}
